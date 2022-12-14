@@ -1,0 +1,36 @@
+experiment_name: "basic_train_full_res"
+device: "cuda:1"
+
+dual_objective: False
+
+# Can be "ring" or "offset_gauss"
+ood_dist: "ring"
+
+# Either "ring_95" or "ring_50" for ring dist; "fixed_direction" vs "random_direction" for offset_gauss
+ood_mode: "ring_95"
+
+ood_data_dir: "/home/mrlennon/Documents/Research/robust_likelihood/ood_data/"
+
+image_size: 32
+train_p_flip: 0.5
+
+batch_size: 20
+data_shuffle: True
+epochs: 200
+start_epoch: 0
+
+norm_flow_parameters: {num_coupling: 18, num_final_coupling: 4, planes: 64}
+
+# Name of the .model checkpoint to load (not including directory)
+# To set checkpoint as None, use null here
+checkpoint: "cifar-best.model"
+load_checkpoint: False
+report_iters: 10
+
+learning_rate: 0.001
+optimizer: "adam"
+scheduler: "step"
+
+scheduler_parameters: {step_size: 10, gamma: 0.5}
+
+home_dir: "/home/mrlennon/Documents/Research/robust_likelihood/"

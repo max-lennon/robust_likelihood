@@ -127,3 +127,17 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Images
+*.png
+*.jpg
+
+# Checkpoints & models
+*.model
+runs/
+experiments/
+debugging/
+
+# Model training data
+ood_classifier_data/
+ood_data/
